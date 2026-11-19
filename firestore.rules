@@ -1,0 +1,414 @@
+rules_version = '2';
+
+// ===============================================================
+// Assumed Data Model — Academia Náutica PNA (acquired-modem-d6gf7)
+// ===============================================================
+//
+// This security rules file assumes the following data structures:
+//
+// 1. Collection: platformConfig/{docId}
+//    Document ID: Configuration key (e.g., "global")
+//    Access: Publicly readable (presentation & authenticated users); writable ONLY by admin.
+//    NOTE: Sensitive credentials (adminPin, adminMasterToken) are strictly forbidden here.
+//    Fields:
+//      - appName: string (required, 1..200 chars) - Academy display name
+//      - accessMode: string (required, enum: ['PRIVADO', 'PUBLICO']) - Platform mode
+//      - currency: string (required, 1..10 chars) - Currency code (e.g., 'ARS')
+//      - subtitle: string (optional, 0..500 chars) - Institutional subtitle
+//      - adminEmail: string (optional, valid email, <= 150 chars) - Public contact email
+//      - stitchTheme: string (optional, 1..100 chars) - Active UI theme identifier
+//      - paymentMethods: map (optional, <= 10 keys) - Payment alias/CBU metadata
+//      - prices: map (optional, <= 10 keys) - Course pricing summary map
+//      - updatedAt: string (optional, 1..50 chars) - Last update ISO date string
+//
+// 2. Collection: courses/{courseId}
+//    Document ID: Course level ID ('conductor' | 'timonel' | 'patron' | 'piloto')
+//    Access: Public summary readable; writable ONLY by admin.
+//    Fields:
+//      - id: string (required, immutable, must equal courseId) - Course identifier
+//      - name: string (required, 1..200 chars) - Official PNA course title
+//      - price: number (required, 0..100000000) - Subscription price in ARS
+//      - hours: string (required, 1..200 chars) - Official curriculum workload
+//      - propulsion: string (required, 1..200 chars) - Propulsion category & limits
+//      - shortTitle: string (optional, 1..100 chars) - Short display title
+//      - subtitle: string (optional, 0..500 chars) - Course summary subtitle
+//      - promoLabel: string (optional, 0..300 chars) - Promotional description
+//      - modality: string (optional, 0..200 chars) - Study modality
+//      - maxLength: string (optional, 0..200 chars) - Vessel max length limit
+//      - updatedAt: string (optional, 1..50 chars) - Last update timestamp string
+//
+// 3. Subcollection: courseMaterials/{courseId}/units/{unitId}
+//    Document ID: Unit identifier (e.g., 'cn-seg-u1', 'ty-nav-u1')
+//    Access: Readable ONLY by admin OR a subscribed student whose custom claim
+//            `request.auth.token.subscribedCourseId == courseId`; writable ONLY by admin.
+//    Fields:
+//      - unitId: string (required, immutable, must equal unitId, 1..100 chars)
+//      - courseId: string (required, immutable, must equal courseId)
+//      - title: string (required, 1..300 chars) - Academic unit title
+//      - summary: string (required, 1..2000 chars) - Unit abstract
+//      - reviewStatus: string (required, enum: ['PUBLICADO', 'EN_REVISION'])
+//      - beginnerContent: string (optional, 0..20000 chars) - Introductory theory
+//      - advancedContent: string (optional, 0..20000 chars) - Regulatory/technical theory
+//      - keyTakeaways: list (optional, <= 50 items) - Key exam bullet points
+//      - updatedBy: string (optional, 1..150 chars) - Admin author email
+//      - updatedAt: string (optional, 1..50 chars) - ISO timestamp string
+//
+// 4. Collection: subscriptions/{subId}
+//    Document ID: Subscription identifier (e.g., 'SUB-1001')
+//    Access: Readable by owner (resource.data.userId == request.auth.uid) or admin;
+//            creatable by authenticated user with valid schema (studentName, levelId, examDate);
+//            updatable and deletable ONLY by admin.
+//    Fields:
+//      - userId: string (required, immutable, 1..128 chars, must match request.auth.uid on create)
+//      - studentName: string (required, 2..150 chars) - Full name of the subscribed student
+//      - levelId: string (required, enum: ['conductor', 'timonel', 'patron', 'piloto'])
+//      - examDate: string or timestamp (required, 10..40 chars if string) - Target PNA exam date
+//      - id: string (optional, 1..100 chars) - Subscription code
+//      - coevExamDate: string (optional, 10..40 chars) - COEV scheduled date string
+//      - coevJurisdiction: string (optional, 1..200 chars) - PNA jurisdiction name
+//      - email: string (optional, valid email, <= 150 chars) - Student email (PII protected)
+//      - dni: string (optional, 0..30 chars) - Student DNI (PII protected)
+//      - propulsionModality: string (optional, 1..100 chars) - 'Motor' | 'Vela y Motor'
+//      - amountPaid: number (optional, 0..100000000) - Amount paid in ARS
+//      - examRendered: bool (optional, must be false on student create) - Exam completion flag
+//      - status: string (optional, enum: ['ACTIVA', 'PENDIENTE', 'FINALIZADA_EXAMEN_RENDIDO', 'VENCIDA_FECHA_COEV', 'CANCELADA'])
+//      - createdAt: string (optional, immutable, 1..50 chars) - Creation date string
+//      - examHistory: list (optional, <= 100 items) - History of practice/COEV attempts
+//
+// 5. Subcollection: studentProgress/{userId}/courses/{courseId}
+//    Document ID: Course level ID ('conductor' | 'timonel' | 'patron' | 'piloto')
+//    Access: Readable and writable ONLY by the matching authenticated student
+//            (request.auth != null && request.auth.uid == userId) or admin.
+//    Fields:
+//      - completedUnits: list (required, <= 100 items) - Completed unit IDs
+//      - completedModules: list (required, <= 50 items) - Completed module IDs
+//      - personalNotes: map (required, <= 100 entries) - Student personal study notes
+//      - updatedAt: string or timestamp (required, 10..40 chars if string)
+//      - userId: string (optional, immutable, must equal userId)
+//      - courseId: string (optional, immutable, must equal courseId)
+//
+// ===============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    // Check if the user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if the authenticated user has the 'admin' custom claim role
+    function isAdmin() {
+      return request.auth != null && request.auth.token.role == 'admin';
+    }
+
+    // Check if user owns the resource by path userId
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    // Check if user is owner based on document's userId field
+    function isDocOwner() {
+      return request.auth != null && resource.data.userId == request.auth.uid;
+    }
+
+    // Verify userId hasn't been tampered with on create
+    function uidUnchanged() {
+      return !('userId' in request.resource.data) ||
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // Ensure userId field is not modified on update
+    function uidNotModified() {
+      return !('userId' in request.resource.data) ||
+        request.resource.data.userId == resource.data.userId;
+    }
+
+    // Check if user is admin or holds an active subscription claim for courseId
+    function isAdminOrSubscribedStudent(courseId) {
+      return request.auth != null && (
+        request.auth.token.role == 'admin' ||
+        request.auth.token.subscribedCourseId == courseId
+      );
+    }
+
+    // Validate required fields exist
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    // Validate that the document contains only the allowed fields
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    // Validate that immutable fields have not been modified during an update
+    function areImmutableFieldsUnchanged(fields) {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(fields);
+    }
+
+    // Validate string length on request.resource.data
+    function validStringLength(field, minLen, maxLen) {
+      return request.resource.data[field] is string &&
+        request.resource.data[field].size() >= minLen &&
+        request.resource.data[field].size() <= maxLen;
+    }
+
+    // Validate optional string (if present, must be string and within length bounds)
+    function isValidOptionalString(field, minLen, maxLen) {
+      return !(field in request.resource.data) || (
+        request.resource.data[field] is string &&
+        request.resource.data[field].size() >= minLen &&
+        request.resource.data[field].size() <= maxLen
+      );
+    }
+
+    // Validate email format
+    function isValidEmail(email) {
+      return email is string &&
+        email.size() >= 5 &&
+        email.size() <= 150 &&
+        email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    // Validate ISO date or datetime string format
+    function isValidDateOrTimestamp(val) {
+      return val is timestamp || (
+        val is string &&
+        val.size() >= 10 &&
+        val.size() <= 40 &&
+        val.matches("^\\d{4}-\\d{2}-\\d{2}.*$")
+      );
+    }
+
+    // Validate that a list is a list and enforces size limits
+    function isValidList(listVal, maxSize) {
+      return listVal is list && listVal.size() <= maxSize;
+    }
+
+    // Validate PNA course level identifier
+    function isValidCourseId(courseId) {
+      return courseId in ['conductor', 'timonel', 'patron', 'piloto'];
+    }
+
+    // ===============================================================
+    // Domain Validators (Called on BOTH create and update)
+    // ===============================================================
+
+    function isValidPlatformConfig(data) {
+      return hasRequiredFields(['appName', 'accessMode', 'currency']) &&
+        hasOnlyAllowedFields([
+          'appName',
+          'subtitle',
+          'accessMode',
+          'adminEmail',
+          'currency',
+          'paymentMethods',
+          'prices',
+          'stitchTheme',
+          'updatedAt'
+        ]) &&
+        validStringLength('appName', 1, 200) &&
+        data.accessMode in ['PRIVADO', 'PUBLICO'] &&
+        validStringLength('currency', 1, 10) &&
+        isValidOptionalString('subtitle', 0, 500) &&
+        (!('adminEmail' in data) || isValidEmail(data.adminEmail)) &&
+        isValidOptionalString('stitchTheme', 1, 100) &&
+        (!('paymentMethods' in data) || (data.paymentMethods is map && data.paymentMethods.size() <= 10)) &&
+        (!('prices' in data) || (data.prices is map && data.prices.size() <= 10)) &&
+        isValidOptionalString('updatedAt', 1, 50);
+    }
+
+    function isValidCourse(data, courseId) {
+      return isValidCourseId(courseId) &&
+        hasRequiredFields(['id', 'name', 'price', 'hours', 'propulsion']) &&
+        hasOnlyAllowedFields([
+          'id',
+          'name',
+          'shortTitle',
+          'subtitle',
+          'price',
+          'promoLabel',
+          'hours',
+          'propulsion',
+          'modality',
+          'maxLength',
+          'updatedAt'
+        ]) &&
+        data.id == courseId &&
+        validStringLength('name', 1, 200) &&
+        data.price is number && data.price >= 0 && data.price <= 100000000 &&
+        validStringLength('hours', 1, 200) &&
+        validStringLength('propulsion', 1, 200) &&
+        isValidOptionalString('shortTitle', 1, 100) &&
+        isValidOptionalString('subtitle', 0, 500) &&
+        isValidOptionalString('promoLabel', 0, 300) &&
+        isValidOptionalString('modality', 0, 200) &&
+        isValidOptionalString('maxLength', 0, 200) &&
+        isValidOptionalString('updatedAt', 1, 50);
+    }
+
+    function isValidCourseUnit(data, courseId, unitId) {
+      return isValidCourseId(courseId) &&
+        hasRequiredFields(['unitId', 'courseId', 'title', 'summary', 'reviewStatus']) &&
+        hasOnlyAllowedFields([
+          'unitId',
+          'courseId',
+          'title',
+          'summary',
+          'beginnerContent',
+          'advancedContent',
+          'keyTakeaways',
+          'reviewStatus',
+          'updatedBy',
+          'updatedAt'
+        ]) &&
+        data.unitId == unitId &&
+        validStringLength('unitId', 1, 100) &&
+        data.courseId == courseId &&
+        validStringLength('title', 1, 300) &&
+        validStringLength('summary', 1, 2000) &&
+        data.reviewStatus in ['PUBLICADO', 'EN_REVISION'] &&
+        isValidOptionalString('beginnerContent', 0, 20000) &&
+        isValidOptionalString('advancedContent', 0, 20000) &&
+        (!('keyTakeaways' in data) || isValidList(data.keyTakeaways, 50)) &&
+        isValidOptionalString('updatedBy', 1, 150) &&
+        isValidOptionalString('updatedAt', 1, 50);
+    }
+
+    function isValidSubscription(data) {
+      return hasRequiredFields(['userId', 'studentName', 'levelId', 'examDate']) &&
+        hasOnlyAllowedFields([
+          'id',
+          'userId',
+          'studentName',
+          'levelId',
+          'examDate',
+          'coevExamDate',
+          'coevJurisdiction',
+          'email',
+          'dni',
+          'propulsionModality',
+          'amountPaid',
+          'examRendered',
+          'status',
+          'createdAt',
+          'examHistory'
+        ]) &&
+        validStringLength('userId', 1, 128) &&
+        validStringLength('studentName', 2, 150) &&
+        isValidCourseId(data.levelId) &&
+        isValidDateOrTimestamp(data.examDate) &&
+        isValidOptionalString('id', 1, 100) &&
+        isValidOptionalString('coevExamDate', 10, 40) &&
+        isValidOptionalString('coevJurisdiction', 1, 200) &&
+        (!('email' in data) || (data.email is string && (data.email.size() == 0 || isValidEmail(data.email)))) &&
+        isValidOptionalString('dni', 0, 30) &&
+        isValidOptionalString('propulsionModality', 1, 100) &&
+        (!('amountPaid' in data) || (data.amountPaid is number && data.amountPaid >= 0 && data.amountPaid <= 100000000)) &&
+        (!('examRendered' in data) || data.examRendered is bool) &&
+        (!('status' in data) || data.status in [
+          'ACTIVA',
+          'PENDIENTE',
+          'FINALIZADA_EXAMEN_RENDIDO',
+          'VENCIDA_FECHA_COEV',
+          'CANCELADA'
+        ]) &&
+        isValidOptionalString('createdAt', 1, 50) &&
+        (!('examHistory' in data) || isValidList(data.examHistory, 100));
+    }
+
+    function isValidStudentProgress(data, userId, courseId) {
+      return isValidCourseId(courseId) &&
+        hasRequiredFields(['completedUnits', 'completedModules', 'personalNotes', 'updatedAt']) &&
+        hasOnlyAllowedFields([
+          'userId',
+          'courseId',
+          'completedUnits',
+          'completedModules',
+          'personalNotes',
+          'updatedAt'
+        ]) &&
+        (!('userId' in data) || (data.userId is string && data.userId == userId)) &&
+        (!('courseId' in data) || (data.courseId is string && data.courseId == courseId)) &&
+        isValidList(data.completedUnits, 100) &&
+        isValidList(data.completedModules, 50) &&
+        data.personalNotes is map && data.personalNotes.size() <= 100 &&
+        isValidDateOrTimestamp(data.updatedAt);
+    }
+
+    // ===============================================================
+    // Collection Rules
+    // ===============================================================
+
+    // 1. platformConfig/{docId}
+    // Readable by any authenticated user or public presentation visitor; writable ONLY by admin.
+    match /platformConfig/{docId} {
+      allow get, list: if true;
+      allow create: if isAdmin() && isValidPlatformConfig(request.resource.data);
+      allow update: if isAdmin() && isValidPlatformConfig(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    // 2. courses/{courseId}
+    // Public course catalog summary readable by anyone; writable ONLY by admin.
+    match /courses/{courseId} {
+      allow get, list: if true;
+      allow create: if isAdmin() && isValidCourse(request.resource.data, courseId);
+      allow update: if isAdmin() &&
+        isValidCourse(request.resource.data, courseId) &&
+        areImmutableFieldsUnchanged(['id']);
+      allow delete: if isAdmin();
+    }
+
+    // 3. courseMaterials/{courseId}/units/{unitId}
+    // Readable ONLY by admin OR a subscribed student whose active subscription matches courseId;
+    // writable ONLY by admin.
+    match /courseMaterials/{courseId}/units/{unitId} {
+      allow get, list: if isAdminOrSubscribedStudent(courseId);
+      allow create: if isAdmin() && isValidCourseUnit(request.resource.data, courseId, unitId);
+      allow update: if isAdmin() &&
+        isValidCourseUnit(request.resource.data, courseId, unitId) &&
+        areImmutableFieldsUnchanged(['unitId', 'courseId']);
+      allow delete: if isAdmin();
+    }
+
+    // 4. subscriptions/{subId}
+    // Readable by owner (resource.data.userId == request.auth.uid) or admin;
+    // creatable by authenticated user with valid schema (studentName, levelId, examDate) and own userId;
+    // updatable/deletable ONLY by admin.
+    match /subscriptions/{subId} {
+      allow get, list: if isDocOwner() || isAdmin();
+      allow create: if isAuthenticated() &&
+        isValidSubscription(request.resource.data) &&
+        (uidUnchanged() || isAdmin()) &&
+        (!('examRendered' in request.resource.data) || request.resource.data.examRendered == false || isAdmin());
+      allow update: if isAdmin() &&
+        isValidSubscription(request.resource.data) &&
+        uidNotModified() &&
+        areImmutableFieldsUnchanged(['userId', 'createdAt']);
+      allow delete: if isAdmin();
+    }
+
+    // 5. studentProgress/{userId}/courses/{courseId}
+    // Readable and writable ONLY by the matching authenticated student (request.auth.uid == userId) or admin.
+    match /studentProgress/{userId}/courses/{courseId} {
+      allow get, list: if isOwner(userId) || isAdmin();
+      allow create: if (isOwner(userId) || isAdmin()) &&
+        isValidStudentProgress(request.resource.data, userId, courseId);
+      allow update: if (isOwner(userId) || isAdmin()) &&
+        isValidStudentProgress(request.resource.data, userId, courseId) &&
+        areImmutableFieldsUnchanged(['userId', 'courseId']);
+      allow delete: if isAdmin();
+    }
+
+    // Default Deny: Explicitly deny all other reads and writes across the database
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "appId": "com.academianautica.pna",
+  "appName": "DOMINIO DEL MAR - Academia Náutica PNA",
+  "cloudProjectId": "acquired-modem-d6gf7",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#07162c",
+      "showSpinner": true,
+      "spinnerColor": "#d4af37"
+    }
+  }
+}

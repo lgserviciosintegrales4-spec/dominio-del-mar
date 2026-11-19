@@ -1,0 +1,34 @@
+{
+  "id": "module-08",
+  "title": "Módulo 08: Legislación Náutica Argentina (Ley 20.094, REGINAVE, Ordenanzas PNA, Ley 20.645 y CONVEMAR)",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "reginave-402",
+  "svg": "/dominio-del-mar/public/images/tratado-rio-de-la-plata.svg",
+  "normativeSources": [
+    "Ley de la Navegación N° 20.094",
+    "REGINAVE (Decreto 770/2019)",
+    "Ordenanza PNA N° 1/18",
+    "Ley 20.645 (Tratado del Río de la Plata)",
+    "Ley 23.968 (Espacios Marítimos / CONVEMAR)"
+  ],
+  "summary": "Atribuciones y límites de cada certificado náutico deportivo (REGINAVE Título 4 Cap. 2), matrículas REY y REJ, artefactos acuáticos deportivos, elementos de seguridad obligatorios (OM 1/18), responsabilidades civiles y penales del encargado (Ley 20.094), Tratado del Río de la Plata (Ley 20.645) y espacios marítimos (Ley 23.968).",
+  "keyConcepts": [
+    {
+      "term": "Atribuciones REGINAVE (Dec. 770/19)",
+      "definition": "Grumete: hasta 7 m. Conductor Náutico: hasta 7 m y 140 HP en navegación diurna. Timonel de Yate: hasta 12 m. Patrón de Yate: hasta 20 m. Piloto de Yate: navegación oceánica y de altura sin límite."
+    },
+    {
+      "term": "Ley de la Navegación N° 20.094",
+      "definition": "Obligación ineludible de asistencia y salvamento de vidas humanas en peligro en el mar (Art. 131 y 371) y actuación como delegado de la autoridad pública."
+    },
+    {
+      "term": "Ley 23.968 y CONVEMAR",
+      "definition": "Mar Territorial (12 MN), Zona Contigua (24 MN), Zona Económica Exclusiva (200 MN) y Plataforma Continental (hasta 350 MN)."
+    }
+  ]
+}

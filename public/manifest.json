@@ -1,0 +1,20 @@
+{
+  "name": "Academia Náutica Deportiva - Cursos Oficiales PNA",
+  "short_name": "Náutica PNA",
+  "description": "Cursos interactivos, simuladores, videos explicativos en español, bibliografía oficial y exámenes COEV de Prefectura Naval Argentina (Conductor Náutico, Timonel, Patrón y Piloto de Yate).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07162c",
+  "theme_color": "#07162c",
+  "orientation": "any",
+  "lang": "es-AR",
+  "categories": ["education", "navigation", "reference"],
+  "icons": [
+    {
+      "src": "/assets/icon-512.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

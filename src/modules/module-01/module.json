@@ -1,0 +1,47 @@
+{
+  "id": "module-01",
+  "title": "Módulo 01: Nomenclatura Marinera, Seguridad de Cubierta y Sectores del Barco",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "nomenclature",
+  "svg": "/dominio-del-mar/public/images/cubierta-nomenclatura.svg",
+  "normativeSources": [
+    "Programa Oficial PNA Conductor Náutico Unidad 1",
+    "Programa Oficial PNA Timonel de Yate Unidad 1"
+  ],
+  "summary": "Estudio integral del casco, dimensiones principales (Eslora, Manga, Puntal, Calado, Francobordo), los 6 elementos de seguridad de cubierta (Púlpito, Balcón, Candeleros, Guardamancebos, Imbornales, Bañera) y los 8 sectores de avistaje del barco.",
+  "keyConcepts": [
+    {
+      "term": "Púlpito de Proa",
+      "definition": "Estructura metálica tubular rígida en el extremo de proa que protege al tripulante en maniobras de fondeo y cambio de velas."
+    },
+    {
+      "term": "Balcón de Popa",
+      "definition": "Estructura metálica rígida de cierre en coronamiento de popa que previene la caída de tripulantes por la popa."
+    },
+    {
+      "term": "Candeleros",
+      "definition": "Postes verticales metálicos fijados a la regala que sostienen los cables del guardamancebos."
+    },
+    {
+      "term": "Guardamancebos",
+      "definition": "Cables o cabos tendidos de proa a popa a través de los candeleros como perímetro de retención."
+    },
+    {
+      "term": "Imbornales",
+      "definition": "Aberturas practicadas en el costado o bañera para evacuar libremente el agua embarcada hacia el exterior."
+    },
+    {
+      "term": "Bañera (Cockpit)",
+      "definition": "Recinto abierto y autovaciante de gobierno desde donde se acciona la caña o rueda del timón."
+    },
+    {
+      "term": "8 Zonas del Barco",
+      "definition": "Proa (000°), Popa (180°), Amura de Babor (315°), Amura de Estribor (045°), Través de Babor (270°), Través de Estribor (090°), Aleta de Babor (225°) y Aleta de Estribor (135°)."
+    }
+  ]
+}

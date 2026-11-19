@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#162942" stroke-width="0.6" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="#F4F1E8"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <rect x="14" y="14" width="932" height="512" fill="none" stroke="#162942" stroke-width="2.5"/>
+  <rect x="20" y="20" width="920" height="500" fill="none" stroke="#162942" stroke-width="0.8"/>
+  <text x="480" y="54" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="21" fill="#162942" letter-spacing="1.2">ELEMENTOS DE SEGURIDAD Y CUBIERTA EN EMBARCACIONES</text>
+  <line x1="160" y1="66" x2="800" y2="66" stroke="#E26D24" stroke-width="2.5"/>
+
+  <path d="M 20 355 Q 250 345 480 355 T 940 355 L 940 484 L 20 484 Z" fill="#2C73B4" fill-opacity="0.88"/>
+  <path d="M 20 355 Q 250 345 480 355 T 940 355" fill="none" stroke="#162942" stroke-width="2.5"/>
+  <path d="M 180 265 L 770 250 L 740 365 L 220 368 Q 190 330 180 265 Z" fill="#FFFFFF" stroke="#162942" stroke-width="3"/>
+  <line x1="205" y1="335" x2="748" y2="332" stroke="#E26D24" stroke-width="2.5"/>
+  <path d="M 330 258 L 365 215 L 555 215 L 580 254 Z" fill="#EDE7D8" stroke="#162942" stroke-width="2.5"/>
+  <rect x="215" y="242" width="105" height="22" fill="#E26D24" fill-opacity="0.22" stroke="#E26D24" stroke-width="2"/>
+  <path d="M 710 250 L 730 198 L 780 198 L 768 250" fill="none" stroke="#E26D24" stroke-width="3"/>
+  <path d="M 180 265 L 172 210 L 225 210 L 225 262" fill="none" stroke="#E26D24" stroke-width="3"/>
+  <line x1="330" y1="258" x2="330" y2="206" stroke="#162942" stroke-width="2.5"/>
+  <line x1="450" y1="256" x2="450" y2="204" stroke="#162942" stroke-width="2.5"/>
+  <line x1="590" y1="253" x2="590" y2="202" stroke="#162942" stroke-width="2.5"/>
+  <line x1="225" y1="210" x2="730" y2="198" stroke="#E26D24" stroke-width="2" stroke-dasharray="8,4"/>
+  <rect x="275" y="318" width="14" height="7" fill="#162942"/>
+  <rect x="405" y="316" width="14" height="7" fill="#162942"/>
+  <rect x="535" y="314" width="14" height="7" fill="#162942"/>
+  <circle cx="755" cy="198" r="4.5" fill="#162942"/><polyline points="755,198 795,140 890,140" fill="none" stroke="#162942" stroke-width="1.8"/>
+  <text x="890" y="133" text-anchor="end" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#162942">PÚLPITO DE PROA</text>
+  <circle cx="515" cy="203" r="4.5" fill="#162942"/><polyline points="515,203 545,130 680,130" fill="none" stroke="#162942" stroke-width="1.8"/>
+  <text x="680" y="123" text-anchor="end" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#162942">GUARDAMANCEBOS</text>
+  <circle cx="450" cy="225" r="4.5" fill="#162942"/><polyline points="450,225 410,150 290,150" fill="none" stroke="#162942" stroke-width="1.8"/>
+  <text x="290" y="143" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#162942">CANDELEROS</text>
+  <circle cx="195" cy="210" r="4.5" fill="#162942"/><polyline points="195,210 155,155 60,155" fill="none" stroke="#162942" stroke-width="1.8"/>
+  <text x="60" y="148" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#162942">BALCÓN DE POPA</text>
+  <circle cx="260" cy="248" r="4.5" fill="#E26D24"/><polyline points="260,248 210,195 75,195" fill="none" stroke="#E26D24" stroke-width="1.8"/>
+  <text x="75" y="188" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#E26D24">BAÑERA (COCKPIT)</text>
+  <circle cx="412" cy="321" r="4.5" fill="#162942"/><polyline points="412,321 445,425 595,425" fill="none" stroke="#162942" stroke-width="1.8"/>
+  <text x="595" y="418" text-anchor="end" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#FFFFFF">IMBORNALES DE DESAGÜE</text>
+
+  <rect x="20" y="484" width="920" height="36" fill="#EDE7D8" stroke="#162942" stroke-width="1"/>
+  <text x="36" y="507" font-family="Courier New, monospace" font-weight="bold" font-size="12" fill="#162942">DOMINIO DEL MAR · PLANO CN-01-A</text>
+  <text x="480" y="507" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="12" fill="#2C73B4">PROGRAMA CONDUCTOR Y TIMONEL PNA · UNIDAD 1</text>
+  <text x="924" y="507" text-anchor="end" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="12" fill="#E26D24">CÓDIGO NÁUTICO · PNA</text>
+</svg>

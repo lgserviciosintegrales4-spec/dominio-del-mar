@@ -1,0 +1,585 @@
+{
+  "platformConfig": {
+    "appName": "Academia Náutica Deportiva Argentina",
+    "subtitle": "Preparación Integral para Exámenes ante la mesa examinadora - Prefectura Naval Argentina",
+    "accessMode": "PRIVADO",
+    "adminMasterToken": "ADMIN-PNA-2026",
+    "adminPin": "2026",
+    "adminEmail": "admin@dominiodelmar.edu.ar",
+    "currency": "ARS",
+    "paymentMethods": {
+      "mercadoPagoAlias": "academia.nautica.pna.mp",
+      "cbu": "0000003100098765432100",
+      "titular": "Administración Academia Náutica PNA",
+      "whatsappSoporte": "+54 9 11 5555-0199",
+      "googlePlayBillingEnabled": true
+    },
+    "prices": {
+      "conductor": {
+        "id": "conductor",
+        "name": "Conductor Náutico",
+        "price": 45000,
+        "promoLabel": "Acceso total hasta rendir en Examen Náutico",
+        "hours": "17 hs cátedra (12 hs Seguridad + 5 hs Legislación)",
+        "propulsion": "Motor (hasta 7 m eslora y 140 HP)"
+      },
+      "timonel": {
+        "id": "timonel",
+        "name": "Timonel de Yate (Vela / Motor / Vela-Motor)",
+        "price": 75000,
+        "promoLabel": "Acceso total a las 3 materias hasta fecha de examen PNA",
+        "hours": "114 hs cátedra (64 hs Nav. I + 40 hs Seg. I + 10 hs Leg. I)",
+        "propulsion": "Vela, Motor y Vela-Motor (hasta 12 m eslora)"
+      },
+      "patron": {
+        "id": "patron",
+        "name": "Patrón de Yate (Vela / Motor / Vela-Motor)",
+        "price": 110000,
+        "promoLabel": "Curso superior costero y estima hasta rendir ante PNA",
+        "hours": "116 hs cátedra (60 hs Nav. II + 40 hs Seg. II + 16 hs Leg. II)",
+        "propulsion": "Vela, Motor y Vela-Motor (gobierno costero y marítimo)"
+      },
+      "piloto": {
+        "id": "piloto",
+        "name": "Piloto de Yate (Navegación de Altura y Astronómica)",
+        "price": 160000,
+        "promoLabel": "Máxima categoría deportiva PNA - Incluye Sextante y Meteorología",
+        "hours": "180 hs cátedra (Nav. III Astronómica + Seg. III + Meteorología + Leg. III)",
+        "propulsion": "Navegación Oceánica y de Altura sin límite de alejamiento"
+      }
+    }
+  },
+  "users": [
+    {
+      "id": "USR-ADMIN-01",
+      "email": "admin@dominiodelmar.edu.ar",
+      "name": "Administrador General (Propietario)",
+      "dni": "20.000.000",
+      "role": "admin",
+      "accessCode": "ADMIN-PNA-2026",
+      "pin": "2026",
+      "createdAt": "2026-11-01"
+    },
+    {
+      "id": "USR-STU-1001",
+      "email": "martin.alvarez@ejemplo.com.ar",
+      "name": "Martín Álvarez",
+      "dni": "34.891.220",
+      "role": "student",
+      "accessCode": "ALUMNO-TIMONEL-2026",
+      "pin": "34891220",
+      "createdAt": "2026-11-05"
+    },
+    {
+      "id": "USR-GUEST-01",
+      "email": "invitado@ejemplo.com.ar",
+      "name": "Invitado Autorizado Demo",
+      "dni": "",
+      "role": "authorized_guest",
+      "accessCode": "NAUTA-VIP-2026",
+      "pin": "2026",
+      "createdAt": "2026-11-10"
+    }
+  ],
+  "invitations": [
+    {
+      "code": "ACQUIRED-MODEM-D6GF7",
+      "label": "Proyecto / Acceso Propietario (acquired-modem-d6gf7)",
+      "role": "admin",
+      "allowedLevels": [
+        "conductor",
+        "timonel",
+        "patron",
+        "piloto"
+      ],
+      "createdAt": "2026-11-17",
+      "active": true
+    },
+    {
+      "code": "ADMIN-PNA-2026",
+      "label": "Acceso Propietario / Administrador General",
+      "role": "admin",
+      "allowedLevels": [
+        "conductor",
+        "timonel",
+        "patron",
+        "piloto"
+      ],
+      "createdAt": "2026-11-10",
+      "active": true
+    },
+    {
+      "code": "NAUTA-VIP-2026",
+      "label": "Link Autorizado de Prueba General (Demo + Alumno)",
+      "role": "authorized_guest",
+      "allowedLevels": [],
+      "createdAt": "2026-11-10",
+      "active": true
+    },
+    {
+      "code": "ALUMNO-TIMONEL-2026",
+      "label": "Alumno Autorizado con Timonel de Yate Activo",
+      "role": "student",
+      "allowedLevels": [
+        "timonel"
+      ],
+      "coevDate": "2026-12-18",
+      "coevJurisdiction": "Prefectura San Isidro / Olivos (PNA)",
+      "studentName": "Alumno Invitado Demo (Timonel)",
+      "createdAt": "2026-11-10",
+      "active": true
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "SUB-2940",
+      "studentName": "Alumno Invitado Demo (Timonel)",
+      "email": "",
+      "dni": "34.891.220",
+      "levelId": "conductor",
+      "propulsionModality": "Vela y Motor",
+      "amountPaid": 45000,
+      "coevExamDate": "2026-12-15",
+      "coevJurisdiction": "Prefectura La Plata / Zárate (Examen Náutico)",
+      "examRendered": false,
+      "status": "ACTIVA",
+      "createdAt": "2026-11-15",
+      "examHistory": []
+    },
+    {
+      "id": "SUB-3998",
+      "studentName": "Alumno Invitado Demo (Timonel)",
+      "email": "",
+      "dni": "34.891.220",
+      "levelId": "timonel",
+      "propulsionModality": "Vela y Motor",
+      "amountPaid": 75000,
+      "coevExamDate": "2026-12-15",
+      "coevJurisdiction": "Prefectura La Plata / Zárate (Examen Náutico)",
+      "examRendered": false,
+      "status": "ACTIVA",
+      "createdAt": "2026-11-15",
+      "examHistory": []
+    },
+    {
+      "id": "SUB-7670",
+      "studentName": "Alumno Invitado Demo (Timonel)",
+      "email": "",
+      "dni": "34.891.220",
+      "levelId": "piloto",
+      "propulsionModality": "Vela y Motor",
+      "amountPaid": 160000,
+      "coevExamDate": "2026-12-15",
+      "coevJurisdiction": "Prefectura La Plata / Zárate (Examen Náutico)",
+      "examRendered": false,
+      "status": "ACTIVA",
+      "createdAt": "2026-11-15",
+      "examHistory": []
+    },
+    {
+      "id": "SUB-5945",
+      "studentName": "Alumno Invitado Demo (Timonel)",
+      "email": "",
+      "dni": "34.891.220",
+      "levelId": "timonel",
+      "propulsionModality": "Vela y Motor",
+      "amountPaid": 75000,
+      "coevExamDate": "2026-12-15",
+      "coevJurisdiction": "Prefectura La Plata / Zárate (Examen Náutico)",
+      "examRendered": false,
+      "status": "ACTIVA",
+      "createdAt": "2026-11-15",
+      "examHistory": []
+    },
+    {
+      "id": "SUB-2343",
+      "studentName": "Alumno Invitado Demo (Timonel)",
+      "email": "",
+      "dni": "34.891.220",
+      "levelId": "patron",
+      "propulsionModality": "Vela y Motor",
+      "amountPaid": 110000,
+      "coevExamDate": "2026-12-15",
+      "coevJurisdiction": "Prefectura La Plata / Zárate (Examen Náutico)",
+      "examRendered": false,
+      "status": "ACTIVA",
+      "createdAt": "2026-11-15",
+      "examHistory": []
+    },
+    {
+      "id": "SUB-1001",
+      "studentName": "Martín Álvarez (Ejemplo Suscripto)",
+      "email": "martin.alvarez@ejemplo.com.ar",
+      "dni": "34.891.220",
+      "levelId": "timonel",
+      "propulsionModality": "Vela y Motor",
+      "amountPaid": 75000,
+      "coevExamDate": "2026-12-18",
+      "coevJurisdiction": "Prefectura La Plata / Zárate (Examen Náutico)",
+      "examRendered": false,
+      "status": "ACTIVA",
+      "createdAt": "2026-11-05",
+      "examHistory": [
+        {
+          "type": "PRUEBA",
+          "levelId": "timonel",
+          "score": 85,
+          "total": 10,
+          "correct": 8.5,
+          "date": "2026-11-08"
+        }
+      ]
+    }
+  ],
+  "studentProgress": {
+    "martin.alvarez@ejemplo.com.ar": {
+      "timonel": {
+        "completedUnits": [
+          "ty-nav-u1",
+          "ty-seg-u1"
+        ],
+        "completedModules": [
+          "module-01",
+          "module-02"
+        ],
+        "personalNotes": {
+          "ty-nav-u1": "Repasar fórmula de conversión de rumbos: Rv = Rc + Dm + desvío.",
+          "module-01": "Los 6 elementos de cubierta: Púlpito, Balcón, Candeleros, Guardamancebos, Imbornales y Bañera."
+        },
+        "updatedAt": "2026-11-15"
+      }
+    }
+  },
+  "examAttempts": [
+    {
+      "id": "ATT-1001",
+      "userEmail": "martin.alvarez@ejemplo.com.ar",
+      "studentName": "Martín Álvarez",
+      "courseId": "timonel",
+      "examType": "practice",
+      "scorePct": 88,
+      "correctCount": 7,
+      "totalQuestions": 8,
+      "passed": true,
+      "createdAt": "2026-11-12T18:30:00Z"
+    }
+  ],
+  "contentOverrides": {
+    "units": {},
+    "modules": {},
+    "questions": {}
+  },
+  "customQuestions": [],
+  "auditLogs": [
+    {
+      "id": "LOG-1795102411490-25",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T15:33:31.490Z"
+    },
+    {
+      "id": "LOG-1795101757227-185",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T15:22:37.227Z"
+    },
+    {
+      "id": "LOG-1795100319269-25",
+      "actorEmail": "nauta-vip-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "authorized_guest",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "NAUTA-VIP-2026",
+      "details": "Ingreso con código NAUTA-VIP-2026",
+      "createdAt": "2026-11-19T14:58:39.269Z"
+    },
+    {
+      "id": "LOG-1795099816327-28",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:50:16.327Z"
+    },
+    {
+      "id": "LOG-1795099815721-186",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:50:15.721Z"
+    },
+    {
+      "id": "LOG-1795098924931-659",
+      "actorEmail": "nauta-vip-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "authorized_guest",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "NAUTA-VIP-2026",
+      "details": "Ingreso con código NAUTA-VIP-2026",
+      "createdAt": "2026-11-19T14:35:24.931Z"
+    },
+    {
+      "id": "LOG-1795098404068-70",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:26:44.068Z"
+    },
+    {
+      "id": "LOG-1795097967584-988",
+      "actorEmail": "alumno-timonel-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "student",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "ALUMNO-TIMONEL-2026",
+      "details": "Ingreso con código ALUMNO-TIMONEL-2026",
+      "createdAt": "2026-11-19T14:19:27.584Z"
+    },
+    {
+      "id": "LOG-1795097672518-387",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:14:32.518Z"
+    },
+    {
+      "id": "LOG-1795097672028-915",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:14:32.028Z"
+    },
+    {
+      "id": "LOG-1795097669946-518",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:14:29.946Z"
+    },
+    {
+      "id": "LOG-1795097669942-222",
+      "actorEmail": "nauta-vip-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "authorized_guest",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "NAUTA-VIP-2026",
+      "details": "Ingreso con código NAUTA-VIP-2026",
+      "createdAt": "2026-11-19T14:14:29.942Z"
+    },
+    {
+      "id": "LOG-1795097669938-611",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:14:29.938Z"
+    },
+    {
+      "id": "LOG-1795097669935-676",
+      "actorEmail": "alumno-timonel-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "student",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "ALUMNO-TIMONEL-2026",
+      "details": "Ingreso con código ALUMNO-TIMONEL-2026",
+      "createdAt": "2026-11-19T14:14:29.935Z"
+    },
+    {
+      "id": "LOG-1795097669908-554",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-19T14:14:29.908Z"
+    },
+    {
+      "id": "LOG-1794930291068-213",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T15:44:51.068Z"
+    },
+    {
+      "id": "LOG-1794929205686-665",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T15:26:45.686Z"
+    },
+    {
+      "id": "LOG-1794925621436-54",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:27:01.436Z"
+    },
+    {
+      "id": "LOG-1794925557800-808",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:25:57.801Z"
+    },
+    {
+      "id": "LOG-1794925018692-866",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:16:58.692Z"
+    },
+    {
+      "id": "LOG-1794925018100-859",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:16:58.100Z"
+    },
+    {
+      "id": "LOG-1794924360500-485",
+      "actorEmail": "usuario_no_autorizado",
+      "actorRole": "student_or_guest",
+      "action": "BLOCKED_UNAUTHORIZED_WRITE",
+      "targetType": "admin_endpoint",
+      "targetId": "/api/admin/content/unit",
+      "details": "Intento bloqueado: un usuario sin rol admin intentó modificar contenidos o configuración.",
+      "createdAt": "2026-11-17T14:06:00.500Z"
+    },
+    {
+      "id": "LOG-1794924345334-137",
+      "actorEmail": "alumno-timonel-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "student",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "ALUMNO-TIMONEL-2026",
+      "details": "Ingreso con código ALUMNO-TIMONEL-2026",
+      "createdAt": "2026-11-17T14:05:45.334Z"
+    },
+    {
+      "id": "LOG-1794924283548-176",
+      "actorEmail": "nauta-vip-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "authorized_guest",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "NAUTA-VIP-2026",
+      "details": "Ingreso con código NAUTA-VIP-2026",
+      "createdAt": "2026-11-17T14:04:43.548Z"
+    },
+    {
+      "id": "LOG-1794924023044-615",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:00:23.044Z"
+    },
+    {
+      "id": "LOG-1794924022808-149",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:00:22.808Z"
+    },
+    {
+      "id": "LOG-1794924006534-784",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:00:06.534Z"
+    },
+    {
+      "id": "LOG-1794924006531-206",
+      "actorEmail": "alumno-timonel-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "student",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "ALUMNO-TIMONEL-2026",
+      "details": "Ingreso con código ALUMNO-TIMONEL-2026",
+      "createdAt": "2026-11-17T14:00:06.531Z"
+    },
+    {
+      "id": "LOG-1794924006528-995",
+      "actorEmail": "admin@dominiodelmar.edu.ar",
+      "actorRole": "admin",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "targetType": "auth",
+      "targetId": "admin",
+      "details": "Inicio de sesión administrativo exitoso",
+      "createdAt": "2026-11-17T14:00:06.528Z"
+    },
+    {
+      "id": "LOG-1794924006525-549",
+      "actorEmail": "nauta-vip-2026@alumno.dominiodelmar.edu.ar",
+      "actorRole": "authorized_guest",
+      "action": "USER_LOGIN_INVITE",
+      "targetType": "auth",
+      "targetId": "NAUTA-VIP-2026",
+      "details": "Ingreso con código NAUTA-VIP-2026",
+      "createdAt": "2026-11-17T14:00:06.525Z"
+    },
+    {
+      "id": "LOG-INIT",
+      "actorEmail": "system@dominiodelmar.edu.ar",
+      "actorRole": "system",
+      "action": "SYSTEM_BOOT",
+      "targetType": "database",
+      "targetId": "db.json",
+      "details": "Control de permisos RBAC activado. Alumnos en modo solo lectura de contenidos.",
+      "createdAt": "2026-11-17T13:59:04.855Z"
+    }
+  ]
+}

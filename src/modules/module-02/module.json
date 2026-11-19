@@ -1,0 +1,31 @@
+{
+  "id": "module-02",
+  "title": "Módulo 02: RIPA Parte A y B (Sección I) — Reglas 1 a 10",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "ripa-channel",
+  "svg": "/dominio-del-mar/public/images/zonas-barco-sectores.svg",
+  "normativeSources": [
+    "Ley Nacional N° 21.546 (COLREG 1972)",
+    "Reglas 1 a 10 RIPA"
+  ],
+  "summary": "Ámbito de aplicación, Regla 2 de responsabilidad y prudencia marinera, definiciones de buques (Regla 3), vigilancia visual y auditiva permanente (Regla 5), velocidad de seguridad (Regla 6), riesgo de abordaje por marcación constante (Regla 7), maniobras francas (Regla 8), canales angostos (Regla 9) y dispositivos de separación de tráfico (Regla 10).",
+  "keyConcepts": [
+    {
+      "term": "Regla 5 (Vigilancia)",
+      "definition": "Todo buque mantendrá en todo momento una eficaz vigilancia visual y auditiva."
+    },
+    {
+      "term": "Regla 7 (Riesgo de Abordaje)",
+      "definition": "Existe riesgo si la marcación de un buque que se aproxima no varía en forma apreciable (marcación constante con distancia decreciente)."
+    },
+    {
+      "term": "Regla 9 (Canales Angostos)",
+      "definition": "Navegar lo más cerca posible del límite exterior del canal que quede por su costado de estribor. Embarcaciones deportivas y menores de 20 m o veleros no estorbarán el tránsito de buques que solo puedan navegar dentro del canal."
+    }
+  ]
+}

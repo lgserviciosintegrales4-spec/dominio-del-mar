@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "acquired-modem-d6gf7"
+  },
+  "targets": {
+    "acquired-modem-d6gf7": {
+      "hosting": {
+        "acquired-modem-d6gf7": [
+          "acquired-modem-d6gf7"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#162942" stroke-width="0.6" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="#F4F1E8"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <rect x="14" y="14" width="932" height="512" fill="none" stroke="#162942" stroke-width="2.5"/>
+  <rect x="20" y="20" width="920" height="500" fill="none" stroke="#162942" stroke-width="0.8"/>
+  <text x="480" y="54" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="21" fill="#162942" letter-spacing="1.2">ZONAS DEL BARCO Y SECTORES DE AVISTAJE (8 DIRECCIONES)</text>
+  <line x1="160" y1="66" x2="800" y2="66" stroke="#E26D24" stroke-width="2.5"/>
+
+  <path d="M 480 95 C 555 155 570 280 548 415 L 412 415 C 390 280 405 155 480 95 Z" fill="#FFFFFF" stroke="#162942" stroke-width="3.5"/>
+  <path d="M 480 112 C 538 165 550 275 532 398 L 428 398 C 410 275 422 165 480 112 Z" fill="#F4F1E8" stroke="#162942" stroke-width="1.5"/>
+  <line x1="480" y1="75" x2="480" y2="455" stroke="#E26D24" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="250" y1="265" x2="710" y2="265" stroke="#2C73B4" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="480" y="90" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="15" fill="#E26D24">PROA (000°)</text>
+  <text x="480" y="472" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="15" fill="#E26D24">POPA (180°)</text>
+  <text x="190" y="155" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#C83E37">AMURA DE BABOR (315°)</text>
+  <text x="615" y="155" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#1F8A5B">AMURA DE ESTRIBOR (045°)</text>
+  <text x="165" y="260" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#C83E37">TRAVÉS DE BABOR (270°)</text>
+  <text x="615" y="260" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#1F8A5B">TRAVÉS DE ESTRIBOR (090°)</text>
+  <text x="190" y="385" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#C83E37">ALETA DE BABOR (225°)</text>
+  <text x="615" y="385" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#1F8A5B">ALETA DE ESTRIBOR (135°)</text>
+
+  <rect x="20" y="484" width="920" height="36" fill="#EDE7D8" stroke="#162942" stroke-width="1"/>
+  <text x="36" y="507" font-family="Courier New, monospace" font-weight="bold" font-size="12" fill="#162942">DOMINIO DEL MAR · PLANO CN-01-B</text>
+  <text x="480" y="507" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="12" fill="#2C73B4">NOMENCLATURA MARINERA · LÍNEA DE CRUJÍA Y MARCACIONES RELATIVAS</text>
+  <text x="924" y="507" text-anchor="end" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="12" fill="#E26D24">CÓDIGO NÁUTICO · PNA</text>
+</svg>

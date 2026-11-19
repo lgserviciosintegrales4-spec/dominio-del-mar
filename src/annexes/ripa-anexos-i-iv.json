@@ -1,0 +1,25 @@
+{
+  "title": "Anexos Técnicos I a IV del Reglamento Internacional para Prevenir los Abordajes (COLREG 1972 / Ley 21.546)",
+  "annexes": [
+    {
+      "id": "ANEXO-I",
+      "title": "Anexo I: Posición y Características Técnicas de las Luces y Marcas",
+      "summary": "Altura de la luz de tope sobre la regala, separación vertical y horizontal entre luces de tope, pantallas interiores negro mate para luces de costado, y dimensiones reglamentarias de las marcas diurnas (diámetro 0,60 m; distancia vertical entre marcas 1,50 m; embarcaciones menores de 20 m pueden usar dimensiones proporcionales)."
+    },
+    {
+      "id": "ANEXO-II",
+      "title": "Anexo II: Señales Adicionales para Buques de Pesca que Pescan Muy Cerca Unos de Otros",
+      "summary": "Luces facultativas para cerqueros (dos luces amarillas superpuestas con destellos alternativos cada segundo) y arrastreros (dos luces blancas para largar redes; una blanca sobre una roja para cobrar redes; dos rojas cuando la red se ha enganchado en una obstrucción)."
+    },
+    {
+      "id": "ANEXO-III",
+      "title": "Anexo III: Detalles Técnicos de los Aparatos de Señales Acústicas",
+      "summary": "Frecuencias fundamentales del pito (70-700 Hz según eslora; 250-700 Hz para esloras menores de 20 m), alcance audible mínimo (0,5 millas para eslora < 20 m; 1 milla para 20-75 m) y características de la campana (diámetro mínimo 300 mm, o 200 mm en eslora < 20 m) y el gong."
+    },
+    {
+      "id": "ANEXO-IV",
+      "title": "Anexo IV: Señales de Peligro y Socorro (Regla 37)",
+      "summary": "16 señales oficiales de peligro: cohetes o granadas con estrellas rojas, bengala de mano roja, señal fumígena naranja, banderas NC del Código Internacional, esfera con bandera cuadrada, radiotelefonía MAYDAY en Canal 16 VHF, llamada selectiva digital DSC en Canal 70, radiobaliza EPIRB 406 MHz, transpondedor radar SART y movimientos lentos de brazos extendidos."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "packageId": "com.academianautica.pna",
+  "cloudProjectId": "acquired-modem-d6gf7",
+  "host": "acquired-modem-d6gf7.web.app",
+  "name": "DOMINIO DEL MAR - Academia Náutica PNA",
+  "launcherName": "Náutica PNA",
+  "display": "standalone",
+  "themeColor": "#07162c",
+  "navigationColor": "#07162c",
+  "navigationColorDark": "#040d1a",
+  "navigationDividerColor": "#1e3a5f",
+  "backgroundColor": "#07162c",
+  "enableNotifications": true,
+  "startUrl": "/?utm_source=playstore",
+  "iconUrl": "/assets/icon-512.svg",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "nauticapna"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "orientation": "default"
+}

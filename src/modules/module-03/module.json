@@ -1,0 +1,31 @@
+{
+  "id": "module-03",
+  "title": "Módulo 03: RIPA Parte B (Secciones II y III) — Reglas 11 a 19",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "ripa-crossing",
+  "svg": "/dominio-del-mar/public/images/ripa-regla12-veleros.svg",
+  "normativeSources": [
+    "Ley Nacional N° 21.546 (COLREG 1972)",
+    "Reglas 11 a 19 RIPA"
+  ],
+  "summary": "Derecho de paso entre veleros (Regla 12), buque que alcanza (Regla 13 — más de 22,5° a popa del través), vuelta encontrada (Regla 14 — ambos caen a estribor), situación de cruce (Regla 15), obligaciones del buque que cede el paso (Regla 16) y del que sigue a rumbo (Regla 17), jerarquía de responsabilidades entre categorías (Regla 18) y conducta en visibilidad reducida (Regla 19).",
+  "keyConcepts": [
+    {
+      "term": "Regla 12 (Veleros)",
+      "definition": "Distintas amuras: el amurado a babor cede el paso. Misma amura: el de barlovento cede el paso al de sotavento."
+    },
+    {
+      "term": "Regla 13 (Buque que alcanza)",
+      "definition": "Todo buque que alcance a otro por el sector de la luz de alcance (135° popel) se mantendrá apartado de la derrota del buque alcanzado."
+    },
+    {
+      "term": "Regla 18 (Jerarquía)",
+      "definition": "Sin gobierno / Maniobra restringida > Restringido por su calado > Dedicado a la pesca > Vela > Propulsión mecánica."
+    }
+  ]
+}

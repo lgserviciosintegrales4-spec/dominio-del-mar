@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador RIPA - Regla 15 (DOMINIO DEL MAR · PNA)</title>
+    <style>
+        body { 
+            background-color: #0B1B3D; /* Azul Marino Elegante */
+            color: white; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        h2 { color: #F4A261; }
+        .escenario { 
+            width: 100%; 
+            max-width: 500px; 
+            height: 350px; 
+            background: #1C315E; 
+            margin: 20px auto; 
+            position: relative; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            border: 2px solid #2A9D8F; 
+        }
+        .barco { 
+            width: 50px; 
+            height: 100px; 
+            background: white; 
+            position: absolute; 
+            border-radius: 25px 25px 10px 10px; 
+            text-align: center; 
+            line-height: 100px; 
+            color: black; 
+            font-weight: bold; 
+            transition: all 1.5s ease-in-out;
+        }
+        #miBarco { 
+            bottom: 20px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: #2A9D8F; /* Verde */
+            color: white; 
+        }
+        #otroBarco { 
+            top: 40px; 
+            right: 40px; 
+            background: #E63946; /* Rojo */
+            color: white; 
+            transform: rotate(-45deg); 
+        }
+        .opciones { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        button { 
+            background: #F4A261; 
+            border: none; 
+            padding: 15px 20px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            color: #0B1B3D; 
+            transition: 0.3s;
+        }
+        button:hover { background: #E76F51; color: white; }
+        #resultado { margin-top: 20px; font-size: 18px; font-weight: bold; min-height: 30px; }
+    </style>
+</head>
+<body>
+
+    <h2>Módulo Práctico: Cruce de Embarcaciones (Regla 15)</h2>
+    <p>Navegas a motor. Observas otra embarcación a motor acercándose por tu <strong>estribor</strong> con riesgo de abordaje.<br>¿Cuál es la maniobra correcta para evitar la colisión?</p>
+    
+    <div class="escenario">
+        <div id="otroBarco" class="barco">B</div>
+        <div id="miBarco" class="barco">TÚ</div>
+    </div>
+
+    <div class="opciones">
+        <button onclick="verificarRespuesta(false)">Mantener Rumbo y Velocidad</button>
+        <button onclick="verificarRespuesta(true)">Caer a Estribor (Ceder el Paso)</button>
+        <button onclick="reiniciarSimulador()" style="background:#2A9D8F;color:white;">🔄 Reiniciar</button>
+        <a href="/?acceso=acquired-modem-d6gf7" style="background:#1C315E;border:1px solid #F4A261;color:#F4A261;text-decoration:none;padding:15px 20px;border-radius:5px;font-weight:bold;">⬅ Volver al Curso</a>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificarRespuesta(esCorrecta) {
+            const resultado = document.getElementById('resultado');
+            const miBarco = document.getElementById('miBarco');
+            const otroBarco = document.getElementById('otroBarco');
+
+            if(esCorrecta) {
+                resultado.innerHTML = "✅ ¡Correcto! El barco B está por tu estribor, él tiene derecho de paso. Debes maniobrar cayendo a estribor para pasar por su popa.";
+                resultado.style.color = "#2A9D8F";
+                // Animación de maniobra evasiva
+                miBarco.style.transform = "translateX(85px) translateY(-25px) rotate(50deg)";
+                otroBarco.style.transform = "translateX(-180px) translateY(155px) rotate(-45deg)";
+            } else {
+                resultado.innerHTML = "❌ Incorrecto. Al tener al barco B por tu estribor, tú eres el buque que cede el paso. Si mantienes el rumbo, habrá colisión.";
+                resultado.style.color = "#E63946";
+                // Animación de colisión
+                miBarco.style.transform = "translateX(-50%) translateY(-100px)";
+                otroBarco.style.transform = "translateX(-100px) translateY(100px) rotate(-45deg)";
+            }
+        }
+
+        function reiniciarSimulador() {
+            const resultado = document.getElementById('resultado');
+            const miBarco = document.getElementById('miBarco');
+            const otroBarco = document.getElementById('otroBarco');
+            resultado.innerHTML = "";
+            miBarco.style.transform = "translateX(-50%)";
+            otroBarco.style.transform = "rotate(-45deg)";
+        }
+    </script>
+
+</body>
+</html>

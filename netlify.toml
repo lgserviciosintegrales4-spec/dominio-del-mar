@@ -1,0 +1,11 @@
+[build]
+  publish = "public"
+  command = "echo 'DOMINIO DEL MAR (acquired-modem-d6gf7) build ready'"
+
+[build.environment]
+  CLOUD_PROJECT_ID = "acquired-modem-d6gf7"
+
+[[redirects]]
+  from = "/dominio-del-mar/*"
+  to = "/:splat"
+  status = 200

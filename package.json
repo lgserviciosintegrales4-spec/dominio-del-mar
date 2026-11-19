@@ -1,0 +1,23 @@
+{
+  "name": "academia-nautica-deportiva-pna",
+  "version": "1.0.0",
+  "description": "Plataforma Educativa y Simulador Oficial para Habilitaciones Náutico Deportivas (PNA) - Conductor Náutico, Timonel, Patrón y Piloto de Yate. Lista para Web, PC y Google Play Store.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android"
+  },
+  "keywords": [
+    "prefectura-naval-argentina",
+    "conductor-nautico",
+    "timonel-de-yate",
+    "patron-de-yate",
+    "piloto-de-yate",
+    "educacion-nautica",
+    "coev-pna"
+  ],
+  "author": "Administrador Academia Náutica",
+  "license": "UNLICENSED"
+}

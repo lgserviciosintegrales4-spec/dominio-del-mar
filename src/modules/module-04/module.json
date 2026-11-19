@@ -1,0 +1,31 @@
+{
+  "id": "module-04",
+  "title": "Módulo 04: RIPA Parte C y D — Reglas 20 a 37 (Luces, Marcas y Señales Acústicas)",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "ripa-lights",
+  "svg": "/dominio-del-mar/public/images/ripa-sectores-luces.svg",
+  "normativeSources": [
+    "Ley Nacional N° 21.546 (COLREG 1972)",
+    "Reglas 20 a 37 y Anexos I a IV RIPA"
+  ],
+  "summary": "Arcos horizontales de luces (Tope 225°, Costado Babor Roja y Estribor Verde 112,5°, Alcance 135°, Todo Horizonte 360°), configuraciones nocturnas y marcas diurnas (esfera negra, cono, cilindro, bicono) y señales acústicas de maniobra (Regla 34) y niebla (Regla 35).",
+  "keyConcepts": [
+    {
+      "term": "Señales de Maniobra (Regla 34)",
+      "definition": "1 corta (●): caigo a estribor. 2 cortas (●●): caigo a babor. 3 cortas (●●●): doy atrás a toda fuerza. 5 o más cortas (●●●●●): duda o advertencia."
+    },
+    {
+      "term": "Señales en Niebla (Regla 35)",
+      "definition": "Mecánico con arrancada: 1 larga (—) cada ≤2 min. Sin arrancada: 2 largas (— —). Vela/Pesca/Restringido: 1 larga y 2 cortas (— ● ●)."
+    },
+    {
+      "term": "Marcas Diurnas",
+      "definition": "Fondeado: 1 esfera negra en proa. Sin gobierno: 2 esferas negras. Varado: 3 esferas negras. Motor y vela simultáneos: 1 cono negro con vértice hacia abajo."
+    }
+  ]
+}

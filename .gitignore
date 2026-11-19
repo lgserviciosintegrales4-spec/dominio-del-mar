@@ -1,0 +1,7 @@
+node_modules/
+.env
+.firebase/
+*.log
+android.keystore
+.DS_Store
+Thumbs.db

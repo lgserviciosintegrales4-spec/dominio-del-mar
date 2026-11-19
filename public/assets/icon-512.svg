@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07162c"/>
+      <stop offset="100%" stop-color="#0d2b52"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d76e"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#aa820a"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#gold)" stroke-width="10" stroke-dasharray="16 8"/>
+  <circle cx="256" cy="256" r="182" fill="none" stroke="url(#gold)" stroke-width="4"/>
+  <!-- Anclas cruzadas y Rosa de los Vientos -->
+  <g transform="translate(256, 256)" fill="url(#gold)">
+    <!-- Puntas de Rosa de los Vientos -->
+    <polygon points="0,-165 24,-35 -24,-35"/>
+    <polygon points="0,165 24,35 -24,35"/>
+    <polygon points="-165,0 -35,24 -35,-24"/>
+    <polygon points="165,0 35,24 35,-24"/>
+    <!-- Ancla central -->
+    <circle cx="0" cy="-95" r="22" fill="none" stroke="url(#gold)" stroke-width="12"/>
+    <rect x="-8" y="-75" width="16" height="175" rx="6"/>
+    <rect x="-65" y="-45" width="130" height="14" rx="7"/>
+    <path d="M-95,45 Q0,135 95,45 L80,32 Q0,105 -80,32 Z"/>
+    <polygon points="-102,32 -70,35 -92,65"/>
+    <polygon points="102,32 70,35 92,65"/>
+    <circle cx="0" cy="0" r="24" fill="#07162c" stroke="url(#gold)" stroke-width="8"/>
+  </g>
+</svg>

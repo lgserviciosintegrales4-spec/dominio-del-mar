@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>DOMINIO DEL MAR — Plataforma Privada de Preparación Náutica Deportiva</title>
+  <meta name="description" content="Plataforma educativa particular e independiente con cursos de preparación para categorías náutico-deportivas: Conductor Náutico, Timonel de Yate, Patrón de Yate y Piloto de Yate." />
+  <meta name="theme-color" content="#061024" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icon-512.svg" />
+  <link rel="apple-touch-icon" href="/assets/icon-512.svg" />
+  <!-- Google Fonts: League Spartan & Inter (Estilo Visual Premium como Big Daddy's) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=League+Spartan:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/styles.css?v=9" />
+</head>
+<body>
+  <!-- Aviso Legal e Institucional Permanente: Plataforma Particular Independiente -->
+  <div class="top-institutional-bar">
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+      <span>
+        <i class="fa-solid fa-circle-info" style="color:#F4A261;"></i>
+        <strong>PLATAFORMA EDUCATIVA PARTICULAR E INDEPENDIENTE:</strong> Brindamos material privado de estudio para rendir las categorías náutico-deportivas (sin vinculación oficial con PNA).
+      </span>
+      <span id="student-coev-pill" class="coev-status-pill"></span>
+      <span id="rbac-permission-pill" class="badge-private" style="background:rgba(16,185,129,0.15); border-color:#10b981; color:#6ee7b7;">🔒 Lectura Protegida</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+      <span id="access-status-pill" class="badge-private">🔒 Modo Privado Activo</span>
+      <div class="mode-selector-bar" title="Cambiar vista de usuario">
+        <button class="mode-btn" id="mode-btn-demo" onclick="window.App.switchRoleSession('demo')">👁️ Presentación</button>
+        <button class="mode-btn" id="mode-btn-student" onclick="window.App.switchRoleSession('student')">🎓 Alumno Suscripto</button>
+        <button class="mode-btn" id="mode-btn-admin" onclick="window.App.switchRoleSession('admin')">🔑 Admin</button>
+      </div>
+      <button id="pwa-install-btn" class="btn btn-gold" style="padding:4px 10px; font-size:0.74rem; display:none;">📲 Instalar App</button>
+    </div>
+  </div>
+
+  <!-- Cabecera Principal Unificada -->
+  <header class="app-header">
+    <div class="brand-wrap" style="cursor:pointer;" onclick="window.App.goToLandingPage()">
+      <img src="/assets/icon-512.svg" alt="Escudo DOMINIO DEL MAR" class="brand-logo" />
+      <div class="brand-title">
+        <h1 style="font-family:'League Spartan', sans-serif; font-size:1.35rem; letter-spacing:1px;">
+          DOMINIO DEL MAR
+          <span style="font-size:0.68rem; background:#E26D24; color:#fff; padding:3px 8px; border-radius:4px; vertical-align:middle; margin-left:6px; letter-spacing:0.5px;">ACADEMIA PRIVADA</span>
+        </h1>
+        <p>Preparación Integral Particular: Conductor Náutico • Timonel de Yate • Patrón de Yate • Piloto de Yate</p>
+      </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <nav class="main-nav">
+      <button class="nav-tab active" data-tab="cursos" onclick="window.App.goToLandingPage()">
+        <i class="fa-solid fa-compass"></i> Presentación y Cursos
+      </button>
+      <button class="nav-tab" data-tab="campus" id="nav-tab-campus" onclick="window.App.enterSubscribedCampus()" style="display:none; background:rgba(42,157,143,0.25); border-color:#2A9D8F; color:#5eead4;">
+        <i class="fa-solid fa-graduation-cap"></i> Mi Curso Suscripto (Aula Exclusiva)
+      </button>
+      <button class="nav-tab" data-tab="nauta" onclick="window.App.switchTab('nauta')">
+        <i class="fa-solid fa-water"></i> Enlaces Útiles al Nauta
+      </button>
+      <button class="nav-tab" data-tab="admin" id="nav-tab-admin" onclick="window.App.switchTab('admin')">
+        <i class="fa-solid fa-user-gear"></i> Panel Dueño / Admin
+      </button>
+    </nav>
+  </header>
+
+  <!-- Contenedor Principal Dinámico -->
+  <main class="main-container" id="app-root"></main>
+
+  <!-- Modal Dinámico (Suscripción / Autenticación Admin / Edición CMS / Enlaces) -->
+  <div class="modal-backdrop" id="subscribe-modal">
+    <div class="modal-box" id="subscribe-modal-content"></div>
+  </div>
+
+  <!-- Modal de Acceso Privado Pre-Lanzamiento -->
+  <div class="modal-backdrop" id="private-gate-modal">
+    <div class="modal-box" id="private-gate-content"></div>
+  </div>
+
+  <!-- Pie de Página con Aclaración Legal Expresa -->
+  <footer class="compact-footer">
+    <div style="max-width:980px; margin:0 auto;">
+      <strong style="color:#F4A261;">⚓ DOMINIO DEL MAR — Plataforma Privada e Independiente de Enseñanza Náutica</strong>
+      <p style="margin-top:6px; line-height:1.5; color:#cbd5e1;">
+        <strong>Aviso Importante de Independencia Institucional:</strong> Esta aplicación móvil y sitio web son un servicio educativo particular y privado. <strong>No pertenecen, no dependen ni tienen relación oficial alguna con la Prefectura Naval Argentina (PNA) ni con organismos estatales.</strong> Brindan exclusivamente material didáctico, videos explicativos, láminas técnicas y simuladores de práctica para que cada alumno estudie por su cuenta con miras a rendir el examen de la categoría náutico-deportiva elegida.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK v10 Compat (Conectado en tiempo real como Big Daddy's al proyecto acquired-modem-d6gf7) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+  <!-- Scripts de Datos Académicos, Motor Gráfico 3D/Vectorial y Aplicación Principal -->
+  <script src="/js/data-conductor.js?v=9"></script>
+  <script src="/js/data-timonel.js?v=9"></script>
+  <script src="/js/data-patron.js?v=9"></script>
+  <script src="/js/data-piloto.js?v=9"></script>
+  <script src="/js/data-resources.js?v=9"></script>
+  <script src="/js/data-ripa-reglamentacion-videos.js?v=9"></script>
+  <script src="/js/video-simulator.js?v=9"></script>
+  <script src="/js/app.js?v=9"></script>
+  <script src="/js/ai-cloud-bridge.js?v=9"></script>
+</body>
+</html>

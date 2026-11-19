@@ -1,0 +1,30 @@
+{
+  "id": "module-06",
+  "title": "Módulo 06: Navegación Costera, Cartografía SHN, Magnetismo, Mareas y Cinemática Radar",
+  "pnaCategories": [
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "navigation",
+  "svg": "/dominio-del-mar/public/images/zonas-barco-sectores.svg",
+  "normativeSources": [
+    "Programa Oficial PNA Timonel, Patrón y Piloto de Yate",
+    "Tablas de Marea SHN H-610 y Carta H-5000"
+  ],
+  "summary": "Conversión de rumbos (Rv = Rm + Dm + Δ; Ct = Dm + Δ), posicionamiento por marcaciones simultáneas y no simultáneas, cálculo de mareas por regla de los doceavos, triángulo de velocidades (corriente y abatimiento) y cinemática radar (Rosa de Maniobra, RCPA y TCPA).",
+  "keyConcepts": [
+    {
+      "term": "Ecuación Fundamental de Rumbos",
+      "definition": "Rumbo Verdadero (Rv) = Rumbo Compás (Rc) + Corrección Total (Ct), donde Ct = Declinación Magnética (Dm actualizada) + Desvío del Compás (Δ)."
+    },
+    {
+      "term": "Regla de los Doceavos (Mareas)",
+      "definition": "En una semimarea de 6 horas, el nivel varía 1/12 en la 1ª hora, 2/12 en la 2ª, 3/12 en la 3ª, 3/12 en la 4ª, 2/12 en la 5ª y 1/12 en la 6ª hora."
+    },
+    {
+      "term": "Cinemática Radar (CPA/TCPA)",
+      "definition": "Determinación del Punto de Mayor Aproximación (CPA) y Tiempo al CPA (TCPA) mediante ploteo de tres posiciones sucesivas (O-A-M) en la Rosa de Maniobra."
+    }
+  ]
+}

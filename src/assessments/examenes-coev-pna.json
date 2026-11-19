@@ -1,0 +1,94 @@
+{
+  "authority": "Comisión Evaluadora para Habilitaciones Náuticas Deportivas (Examen - Dirección de Educación PNA)",
+  "passingThresholdPct": 75,
+  "levels": [
+    {
+      "id": "conductor",
+      "name": "Conductor Náutico",
+      "examQuestionsCount": 20,
+      "sampleQuestions": [
+        {
+          "question": "¿Cómo se denomina la estructura metálica tubular rígida ubicada en la proa que brinda seguridad al tripulante en cubierta?",
+          "options": [
+            "Balcón de popa",
+            "Púlpito de proa",
+            "Imbornal",
+            "Bañera"
+          ],
+          "correctIndex": 1,
+          "explanation": "El Púlpito de Proa es la barandilla metálica rígida en proa; en popa recibe el nombre de Balcón de Popa.",
+          "norm": "Programa Oficial PNA Conductor Náutico · Unidad 1"
+        },
+        {
+          "question": "Entrando desde el mar hacia un puerto argentino (Región B IALA), ¿de qué color y por qué banda debe dejarse la boya lateral de estribor?",
+          "options": [
+            "Verde por estribor",
+            "Roja por estribor",
+            "Amarilla por babor",
+            "Negra y amarilla por el norte"
+          ],
+          "correctIndex": 1,
+          "explanation": "En la Región B de IALA (Argentina y toda América), entrando desde el mar las boyas rojas cónicas se dejan por estribor y las verdes cilíndricas por babor.",
+          "norm": "Sistema IALA Región B · SHN H-211"
+        }
+      ]
+    },
+    {
+      "id": "timonel",
+      "name": "Timonel de Yate (Vela y Motor)",
+      "examQuestionsCount": 25,
+      "sampleQuestions": [
+        {
+          "question": "Según la Regla 12 del RIPA, cuando dos veleros reciben el viento por bandas contrarias y existe riesgo de abordaje, ¿cuál debe maniobrar?",
+          "options": [
+            "El que recibe el viento por estribor",
+            "El que recibe el viento por babor",
+            "El de mayor eslora",
+            "Ambos caen a babor"
+          ],
+          "correctIndex": 1,
+          "explanation": "Regla 12(a)(i) RIPA: Cuando cada uno de ellos reciba el viento por bandas contrarias, el que lo reciba por babor se mantendrá apartado de la derrota del otro.",
+          "norm": "Ley 21.546 · RIPA Regla 12(a)(i)"
+        }
+      ]
+    },
+    {
+      "id": "patron",
+      "name": "Patrón de Yate",
+      "examQuestionsCount": 30,
+      "sampleQuestions": [
+        {
+          "question": "En navegación con visibilidad reducida (Regla 19 RIPA), al detectar únicamente por radar otro buque a proa del través sin que sea un buque alcanzado, ¿qué maniobra debe evitarse en la medida de lo posible?",
+          "options": [
+            "Reducir la velocidad",
+            "Un cambio de rumbo a babor",
+            "Detener las máquinas",
+            "Emitir señales fónicas de niebla"
+          ],
+          "correctIndex": 1,
+          "explanation": "La Regla 19(d)(i) establece que se evitará en la medida de lo posible un cambio de rumbo a babor para un buque situado a proa del través, salvo que el otro buque esté siendo alcanzado.",
+          "norm": "Ley 21.546 · RIPA Regla 19(d)(i)"
+        }
+      ]
+    },
+    {
+      "id": "piloto",
+      "name": "Piloto de Yate (Navegación Oceánica)",
+      "examQuestionsCount": 35,
+      "sampleQuestions": [
+        {
+          "question": "De acuerdo con la Ley N° 23.968 de Espacios Marítimos Argentinos y la CONVEMAR, ¿hasta qué distancia medida desde las líneas de base se extiende la Zona Económica Exclusiva (ZEE)?",
+          "options": [
+            "12 millas marinas",
+            "24 millas marinas",
+            "200 millas marinas",
+            "350 millas marinas"
+          ],
+          "correctIndex": 2,
+          "explanation": "El Mar Territorial llega hasta las 12 MN, la Zona Contigua hasta las 24 MN y la Zona Económica Exclusiva (ZEE) se extiende hasta las 200 millas marinas.",
+          "norm": "Ley Nacional N° 23.968 · Art. 5 / CONVEMAR"
+        }
+      ]
+    }
+  ]
+}

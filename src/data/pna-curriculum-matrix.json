@@ -1,0 +1,68 @@
+{
+  "title": "Matriz de Evaluación Curricular por Categoría PNA (Conductor, Timonel, Patrón y Piloto de Yate)",
+  "categories": [
+    {
+      "category": "Conductor Náutico",
+      "maxLengthMeters": 7,
+      "maxPowerHP": 140,
+      "navigationZone": "Lagos, ríos interiores, Río de la Plata con límite costero (diurna)",
+      "requiredModules": [
+        "module-01",
+        "module-02",
+        "module-03",
+        "module-04",
+        "module-05",
+        "module-07",
+        "module-08"
+      ]
+    },
+    {
+      "category": "Timonel de Yate (Motor / Vela-Motor)",
+      "maxLengthMeters": 12,
+      "maxPowerHP": "Sin límite de potencia",
+      "navigationZone": "Ríos interiores, lagos y Río de la Plata interior/exterior (zonas habilitadas, diurna y nocturna)",
+      "requiredModules": [
+        "module-01",
+        "module-02",
+        "module-03",
+        "module-04",
+        "module-05",
+        "module-06",
+        "module-07",
+        "module-08"
+      ]
+    },
+    {
+      "category": "Patrón de Yate",
+      "maxLengthMeters": 20,
+      "maxPowerHP": "Sin límite de potencia",
+      "navigationZone": "Navegación lacustre, fluvial (todo el Río de la Plata) y marítima costera",
+      "requiredModules": [
+        "module-01",
+        "module-02",
+        "module-03",
+        "module-04",
+        "module-05",
+        "module-06",
+        "module-07",
+        "module-08"
+      ]
+    },
+    {
+      "category": "Piloto de Yate",
+      "maxLengthMeters": "Sin límite de eslora deportiva",
+      "maxPowerHP": "Sin límite de potencia",
+      "navigationZone": "Navegación oceánica y de altura en cualquier mar del mundo",
+      "requiredModules": [
+        "module-01",
+        "module-02",
+        "module-03",
+        "module-04",
+        "module-05",
+        "module-06",
+        "module-07",
+        "module-08"
+      ]
+    }
+  ]
+}

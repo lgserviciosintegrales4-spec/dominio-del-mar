@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOMINIO DEL MAR — Arquitectura Modular, Planos Técnicos y 8 Módulos PNA</title>
+  <style>
+    :root {
+      --parchment: #F4F1E8;
+      --parchment-dark: #EDE7D8;
+      --navy: #162942;
+      --sea: #2C73B4;
+      --amber: #E26D24;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--parchment);
+      color: var(--navy);
+    }
+    header {
+      background: var(--navy);
+      color: var(--parchment);
+      padding: 18px 28px;
+      border-bottom: 4px solid var(--amber);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    header h1 { margin: 0; font-size: 22px; letter-spacing: 1px; }
+    header p { margin: 4px 0 0; font-size: 13px; color: #b9d2ee; }
+    .btn-back {
+      background: var(--amber);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-left: 5px solid var(--amber);
+      padding-left: 12px;
+      margin: 28px 0 16px;
+    }
+    .grid-blueprints {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+    }
+    .blueprint-card {
+      background: #fff;
+      border: 2px solid var(--navy);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 4px 12px rgba(22,41,66,0.08);
+    }
+    .blueprint-card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: var(--navy);
+    }
+    .blueprint-card img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--navy);
+      border-radius: 6px;
+    }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+    }
+    .module-card {
+      background: var(--parchment-dark);
+      border: 2px solid var(--navy);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .module-badge {
+      display: inline-block;
+      background: var(--amber);
+      color: #fff;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .module-card h4 { margin: 4px 0 8px; font-size: 15px; }
+    .module-card p { margin: 0 0 10px; font-size: 13px; line-height: 1.45; }
+    .module-links a {
+      display: inline-block;
+      margin-right: 8px;
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sea);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>⚓ DOMINIO DEL MAR — ARQUITECTURA MODULAR E INFOGRAFÍAS TÉCNICAS PNA</h1>
+      <p>Estilo Visual "Código Náutico" (#F4F1E8 · #162942 · #2C73B4 · #E26D24) · 8 Módulos Oficiales · RIPA (Reglas 1-38) · IALA B · Legislación Argentina</p>
+    </div>
+    <a class="btn-back" href="/?acceso=ADMIN-PNA-2026">⬅ Volver al Simulador Principal y Cursos PNA</a>
+  </header>
+  <div class="container">
+    <div class="section-title">1. Planos Técnicos Vectoriales SVG (Estilo Código Náutico · public/images/)</div>
+    <div class="grid-blueprints">
+      <div class="blueprint-card">
+        <h3>Plano CN-01-A: Elementos de Seguridad y Cubierta (Púlpito, Balcón, Candeleros, Guardamancebos, Imbornales, Bañera)</h3>
+        <img src="/dominio-del-mar/public/images/cubierta-nomenclatura.svg" alt="Cubierta Nomenclatura" />
+      </div>
+      <div class="blueprint-card">
+        <h3>Plano CN-01-B: Las 8 Zonas del Barco (Proa, Popa, Amuras, Traveses y Aletas de Babor y Estribor)</h3>
+        <img src="/dominio-del-mar/public/images/zonas-barco-sectores.svg" alt="8 Zonas del Barco" />
+      </div>
+      <div class="blueprint-card">
+        <h3>Plano IALA-B-02: Balizamiento Marítimo IALA Región B (Cardinales Norte, Este, Sur, Oeste)</h3>
+        <img src="/dominio-del-mar/public/images/iala-b-cardinales.svg" alt="IALA B Cardinales" />
+      </div>
+      <div class="blueprint-card">
+        <h3>Plano RIPA-21: Arcos y Sectores Lumínicos (Tope 225°, Babor/Estribor 112,5°, Alcance 135°)</h3>
+        <img src="/dominio-del-mar/public/images/ripa-sectores-luces.svg" alt="RIPA Sectores Luces" />
+      </div>
+      <div class="blueprint-card">
+        <h3>Plano RIPA-12: Derecho de Paso entre Veleros (Distintas Amuras y Misma Amura)</h3>
+        <img src="/dominio-del-mar/public/images/ripa-regla12-veleros.svg" alt="RIPA Regla 12 Veleros" />
+      </div>
+      <div class="blueprint-card">
+        <h3>Plano LEG-AR-08: Tratado del Río de la Plata (Ley 20.645) y Espacios Marítimos (Ley 23.968)</h3>
+        <img src="/dominio-del-mar/public/images/tratado-rio-de-la-plata.svg" alt="Espacios Marítimos" />
+      </div>
+    </div>
+
+    <div class="section-title">2. Los 8 Módulos Curriculares PNA (src/modules/module-01 a module-08)</div>
+    <div class="modules-grid">
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-01</span>
+          <h4>Módulo 01: Nomenclatura Marinera, Seguridad de Cubierta y Sectores del Barco</h4>
+          <p>Estudio integral del casco, dimensiones principales (Eslora, Manga, Puntal, Calado, Francobordo), los 6 elementos de seguridad de cubierta (Púlpito, Balcón, Candeleros, Guardamancebos, Imbornales, Bañera) y los 8 sectores de avistaje del barco.</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-01/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-01/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-01.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-02</span>
+          <h4>Módulo 02: RIPA Parte A y B (Sección I) — Reglas 1 a 10</h4>
+          <p>Ámbito de aplicación, Regla 2 de responsabilidad y prudencia marinera, definiciones de buques (Regla 3), vigilancia visual y auditiva permanente (Regla 5), velocidad de seguridad (Regla 6), riesgo de abordaje por marcación constante (Regla 7), maniobras francas (Regla 8), canales angostos (Regla 9) y dispositivos de separación de tráfico (Regla 10).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-02/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-02/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-02.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-03</span>
+          <h4>Módulo 03: RIPA Parte B (Secciones II y III) — Reglas 11 a 19</h4>
+          <p>Derecho de paso entre veleros (Regla 12), buque que alcanza (Regla 13 — más de 22,5° a popa del través), vuelta encontrada (Regla 14 — ambos caen a estribor), situación de cruce (Regla 15), obligaciones del buque que cede el paso (Regla 16) y del que sigue a rumbo (Regla 17), jerarquía de responsabilidades entre categorías (Regla 18) y conducta en visibilidad reducida (Regla 19).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-03/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-03/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-03.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-04</span>
+          <h4>Módulo 04: RIPA Parte C y D — Reglas 20 a 37 (Luces, Marcas y Señales Acústicas)</h4>
+          <p>Arcos horizontales de luces (Tope 225°, Costado Babor Roja y Estribor Verde 112,5°, Alcance 135°, Todo Horizonte 360°), configuraciones nocturnas y marcas diurnas (esfera negra, cono, cilindro, bicono) y señales acústicas de maniobra (Regla 34) y niebla (Regla 35).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-04/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-04/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-04.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-05</span>
+          <h4>Módulo 05: Balizamiento Marítimo IALA Región B (Argentina)</h4>
+          <p>Boyas laterales entrando desde el mar (Babor: Verde cilíndrica; Estribor: Roja cónica), Bifurcación de canal, Boyas Cardinales (Norte, Este, Sur, Oeste con sus topmarks de conos y ritmos Q/VQ), Peligro Aislado, Aguas Seguras, Especiales y Boya de Naufragio Nuevo (Azul y Amarilla).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-05/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-05/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-05.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-06</span>
+          <h4>Módulo 06: Navegación Costera, Cartografía SHN, Magnetismo, Mareas y Cinemática Radar</h4>
+          <p>Conversión de rumbos (Rv = Rm + Dm + Δ; Ct = Dm + Δ), posicionamiento por marcaciones simultáneas y no simultáneas, cálculo de mareas por regla de los doceavos, triángulo de velocidades (corriente y abatimiento) y cinemática radar (Rosa de Maniobra, RCPA y TCPA).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-06/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-06/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-06.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-07</span>
+          <h4>Módulo 07: Meteorología Río de la Plata, Supervivencia, Lucha contra Incendios y GMDSS</h4>
+          <p>Fenómenos meteorológicos locales (Sudestada por ciclogénesis y bloqueo anticiclónico; Pampero por frente frío activo del SW), control de averías y vías de agua, prevención de explosión de gases en sentina, clases de fuego (A, B, C) y radiocomunicaciones VHF Canal 16 (Mayday, Pan-Pan, Sécurité) y GMDSS (DSC Canal 70, EPIRB 406 MHz, SART, NAVTEX).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-07/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-07/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-07.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <span class="module-badge">MODULE-08</span>
+          <h4>Módulo 08: Legislación Náutica Argentina (Ley 20.094, REGINAVE, Ordenanzas PNA, Ley 20.645 y CONVEMAR)</h4>
+          <p>Atribuciones y límites de cada certificado náutico deportivo (REGINAVE Título 4 Cap. 2), matrículas REY y REJ, artefactos acuáticos deportivos, elementos de seguridad obligatorios (OM 1/18), responsabilidades civiles y penales del encargado (Ley 20.094), Tratado del Río de la Plata (Ley 20.645) y espacios marítimos (Ley 23.968).</p>
+          <div class="module-links">
+            <a href="/dominio-del-mar/src/modules/module-08/module.json" target="_blank">📄 module.json</a>
+            <a href="/dominio-del-mar/src/modules/module-08/index.js" target="_blank">⚙️ index.js</a>
+            <a href="/dominio-del-mar/public/subtitles/module-08.vtt" target="_blank">💬 subtítulos.vtt</a>
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="section-title">3. Componentes, Anexos, Evaluaciones Examen y Documentación Normativa</div>
+    <div class="modules-grid">
+      <div class="module-card">
+        <span class="module-badge">SRC/COMPONENTS</span>
+        <h4>6 Componentes Modulares ES6</h4>
+        <div class="module-links">
+          <a href="/dominio-del-mar/src/components/Infographic/Infographic.js" target="_blank">Infographic.js</a>
+          <a href="/dominio-del-mar/src/components/VideoPlayer/VideoPlayer.js" target="_blank">VideoPlayer.js</a>
+          <a href="/dominio-del-mar/src/components/Narration/Narration.js" target="_blank">Narration.js</a>
+          <a href="/dominio-del-mar/src/components/ShipSimulator/ShipSimulator.js" target="_blank">ShipSimulator.js</a>
+          <a href="/dominio-del-mar/src/components/Quiz/Quiz.js" target="_blank">Quiz.js</a>
+          <a href="/dominio-del-mar/src/components/ProgressTracker/ProgressTracker.js" target="_blank">ProgressTracker.js</a>
+        </div>
+      </div>
+      <div class="module-card">
+        <span class="module-badge">ANNEXES · ASSESSMENTS · DATA</span>
+        <h4>Anexos RIPA, Exámenes Examen y Matriz PNA</h4>
+        <div class="module-links">
+          <a href="/dominio-del-mar/src/annexes/ripa-anexos-i-iv.json" target="_blank">ripa-anexos-i-iv.json</a>
+          <a href="/dominio-del-mar/src/assessments/examenes-coev-pna.json" target="_blank">examenes-coev-pna.json</a>
+          <a href="/dominio-del-mar/src/data/pna-curriculum-matrix.json" target="_blank">pna-curriculum-matrix.json</a>
+        </div>
+      </div>
+      <div class="module-card">
+        <span class="module-badge">DOCS/</span>
+        <h4>Fuentes Reglamentarias, Guiones, Locución y Storyboards</h4>
+        <div class="module-links">
+          <a href="/dominio-del-mar/docs/regulatory-sources/01-RIPA-Completo.md" target="_blank">01-RIPA-Completo.md</a>
+          <a href="/dominio-del-mar/docs/regulatory-sources/02-REGINAVE-y-Ordenanzas-PNA.md" target="_blank">02-REGINAVE.md</a>
+          <a href="/dominio-del-mar/docs/regulatory-sources/03-Ley-Navegacion-20094.md" target="_blank">03-Ley-20094.md</a>
+          <a href="/dominio-del-mar/docs/regulatory-sources/04-Tratado-Rio-de-la-Plata-y-CONVEMAR.md" target="_blank">04-Tratado-y-CONVEMAR.md</a>
+          <a href="/dominio-del-mar/docs/video-scripts/guiones-tecnicos.md" target="_blank">guiones-tecnicos.md</a>
+          <a href="/dominio-del-mar/docs/voice-over/locucion-es-ar.md" target="_blank">locucion-es-ar.md</a>
+          <a href="/dominio-del-mar/docs/storyboards/storyboards-codigo-nautico.md" target="_blank">storyboards.md</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

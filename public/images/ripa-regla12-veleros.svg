@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#162942" stroke-width="0.6" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="#F4F1E8"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <rect x="14" y="14" width="932" height="512" fill="none" stroke="#162942" stroke-width="2.5"/>
+  <rect x="20" y="20" width="920" height="500" fill="none" stroke="#162942" stroke-width="0.8"/>
+  <text x="480" y="54" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="21" fill="#162942" letter-spacing="1.2">RIPA REGLA 12: DERECHO DE PASO ENTRE VELEROS</text>
+  <line x1="160" y1="66" x2="800" y2="66" stroke="#E26D24" stroke-width="2.5"/>
+
+  <line x1="480" y1="85" x2="480" y2="155" stroke="#2C73B4" stroke-width="4"/>
+  <text x="480" y="175" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="14" fill="#2C73B4">VIENTO REAL (DESDE EL NORTE)</text>
+  <rect x="130" y="210" width="310" height="210" fill="#FFFFFF" stroke="#162942" stroke-width="2.5"/>
+  <text x="285" y="245" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="15" fill="#162942">1. DISTINTAS AMURAS</text>
+  <text x="285" y="295" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#C83E37">Amurado a BABOR: CEDE EL PASO</text>
+  <text x="285" y="335" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#1F8A5B">Amurado a ESTRIBOR: MANTIENE RUMBO</text>
+  <rect x="520" y="210" width="310" height="210" fill="#FFFFFF" stroke="#162942" stroke-width="2.5"/>
+  <text x="675" y="245" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="15" fill="#162942">2. MISMA AMURA</text>
+  <text x="675" y="295" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#E26D24">Barco a BARLOVENTO: CEDE EL PASO</text>
+  <text x="675" y="335" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#1F8A5B">Barco a SOTAVENTO: MANTIENE RUMBO</text>
+
+  <rect x="20" y="484" width="920" height="36" fill="#EDE7D8" stroke="#162942" stroke-width="1"/>
+  <text x="36" y="507" font-family="Courier New, monospace" font-weight="bold" font-size="12" fill="#162942">DOMINIO DEL MAR · PLANO RIPA-12</text>
+  <text x="480" y="507" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="12" fill="#2C73B4">REGLA 12 INCISOS (a)(i), (a)(ii) Y (a)(iii) · COLREG 72</text>
+  <text x="924" y="507" text-anchor="end" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="12" fill="#E26D24">CÓDIGO NÁUTICO · PNA</text>
+</svg>

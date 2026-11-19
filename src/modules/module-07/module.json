@@ -1,0 +1,32 @@
+{
+  "id": "module-07",
+  "title": "Módulo 07: Meteorología Río de la Plata, Supervivencia, Lucha contra Incendios y GMDSS",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "weather",
+  "svg": "/dominio-del-mar/public/images/cubierta-nomenclatura.svg",
+  "normativeSources": [
+    "SMN Argentina",
+    "Ordenanza Marítima PNA N° 1/18",
+    "Reglamento Radiocomunicaciones UIT / GMDSS"
+  ],
+  "summary": "Fenómenos meteorológicos locales (Sudestada por ciclogénesis y bloqueo anticiclónico; Pampero por frente frío activo del SW), control de averías y vías de agua, prevención de explosión de gases en sentina, clases de fuego (A, B, C) y radiocomunicaciones VHF Canal 16 (Mayday, Pan-Pan, Sécurité) y GMDSS (DSC Canal 70, EPIRB 406 MHz, SART, NAVTEX).",
+  "keyConcepts": [
+    {
+      "term": "Sudestada vs. Pampero",
+      "definition": "Sudestada: vientos persistentes del SE con lluvias, mala visibilidad y crecida extraordinaria del Río de la Plata. Pampero: frente frío violento del SW con nube arcus (\"cigarro\"), ráfagas severas, descenso térmico brusco y rápida bajante."
+    },
+    {
+      "term": "Fondeo Seguro",
+      "definition": "Longitud de fondeo (filado): mínimo 3 a 5 veces la sonda en condiciones normales, y 5 a 7 veces con mal tiempo."
+    },
+    {
+      "term": "VHF Canal 16 (156,8 MHz)",
+      "definition": "Canal internacional de Socorro, Urgencia y Seguridad: MAYDAY (peligro grave e inminente), PAN-PAN (urgencia), SÉCURITÉ (aviso de seguridad)."
+    }
+  ]
+}

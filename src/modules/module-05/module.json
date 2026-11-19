@@ -1,0 +1,31 @@
+{
+  "id": "module-05",
+  "title": "Módulo 05: Balizamiento Marítimo IALA Región B (Argentina)",
+  "pnaCategories": [
+    "Conductor Náutico",
+    "Timonel de Yate",
+    "Patrón de Yate",
+    "Piloto de Yate"
+  ],
+  "template": "buoys",
+  "svg": "/dominio-del-mar/public/images/iala-b-cardinales.svg",
+  "normativeSources": [
+    "Sistema de Balizamiento Marítimo IALA-AISM Región B",
+    "Servicio de Hidrografía Naval (SHN) Publicación H-211"
+  ],
+  "summary": "Boyas laterales entrando desde el mar (Babor: Verde cilíndrica; Estribor: Roja cónica), Bifurcación de canal, Boyas Cardinales (Norte, Este, Sur, Oeste con sus topmarks de conos y ritmos Q/VQ), Peligro Aislado, Aguas Seguras, Especiales y Boya de Naufragio Nuevo (Azul y Amarilla).",
+  "keyConcepts": [
+    {
+      "term": "Laterales Región B (Entrando)",
+      "definition": "Babor: color VERDE (marca de tope cilíndrica). Estribor: color ROJO (marca de tope cónica). Regla mnemotécnica: \"ROJO A LA DERECHA REGRESANDO\"."
+    },
+    {
+      "term": "Boyas Cardinales (Reloj)",
+      "definition": "Norte: Q/VQ continuo (▲▲). Este: Q(3)/VQ(3) (▲▼). Sur: Q(6)+LFl / VQ(6)+LFl (▼▼). Oeste: Q(9)/VQ(9) (▼▲)."
+    },
+    {
+      "term": "Peligro Aislado y Aguas Seguras",
+      "definition": "Peligro Aislado: negra con franja roja, 2 esferas negras, Fl(2) blanca. Aguas Seguras: franjas verticales rojas y blancas, 1 esfera roja, Iso/Oc/LFl 10s o Morse \"A\"."
+    }
+  ]
+}

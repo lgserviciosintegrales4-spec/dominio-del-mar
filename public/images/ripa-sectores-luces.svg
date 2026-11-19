@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#162942" stroke-width="0.6" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="#F4F1E8"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <rect x="14" y="14" width="932" height="512" fill="none" stroke="#162942" stroke-width="2.5"/>
+  <rect x="20" y="20" width="920" height="500" fill="none" stroke="#162942" stroke-width="0.8"/>
+  <text x="480" y="54" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="21" fill="#162942" letter-spacing="1.2">RIPA PARTE C (REGLAS 20-31): ARCOS Y SECTORES DE LUCES</text>
+  <line x1="160" y1="66" x2="800" y2="66" stroke="#E26D24" stroke-width="2.5"/>
+
+  <circle cx="480" cy="275" r="150" fill="none" stroke="#162942" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 342 332 A 150 150 0 1 1 618 332" fill="none" stroke="#E26D24" stroke-width="5"/>
+  <path d="M 369 321 A 120 120 0 0 1 480 155" fill="none" stroke="#C83E37" stroke-width="7"/>
+  <path d="M 480 155 A 120 120 0 0 1 591 321" fill="none" stroke="#1F8A5B" stroke-width="7"/>
+  <path d="M 591 321 A 120 120 0 0 1 369 321" fill="none" stroke="#2C73B4" stroke-width="6"/>
+  <text x="480" y="105" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#E26D24">LUZ DE TOPE BLANCA (225°)</text>
+  <text x="210" y="245" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#C83E37">BABOR ROJA (112,5°)</text>
+  <text x="625" y="245" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#1F8A5B">ESTRIBOR VERDE (112,5°)</text>
+  <text x="480" y="445" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="#2C73B4">LUZ DE ALCANCE BLANCA (135°)</text>
+
+  <rect x="20" y="484" width="920" height="36" fill="#EDE7D8" stroke="#162942" stroke-width="1"/>
+  <text x="36" y="507" font-family="Courier New, monospace" font-weight="bold" font-size="12" fill="#162942">DOMINIO DEL MAR · PLANO RIPA-21</text>
+  <text x="480" y="507" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="12" fill="#2C73B4">CONVENIO COLREG 1972 (LEY 21.546) · REGLAS 21 Y 22</text>
+  <text x="924" y="507" text-anchor="end" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="12" fill="#E26D24">CÓDIGO NÁUTICO · PNA</text>
+</svg>
